@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Detalhes do Produto - In Nature</title>
+    <link rel="stylesheet" href="/css/950ml.css">
+    <script src="https://kit.fontawesome.com/111af0b65c.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    <div class="container-page">
+        <header class="container-header">
+            <div class="header-top">
+                <a href="/index.html"><i class="fa-solid fa-chevron-left"></i></a>
+                <p class="anuncio-promocao">Aproveite todas as garrafas <span>hydra</span> com 25% off</p>
+            </div>
+            <div class="menu">
+                <a href="/index.html" class="back-inicio">
+                    <div class="logo">
+                        <p class="logo-name">In Nature</p> 
+                        <img class="img-logo" src="/img/fola.jpeg" alt="Logo">
+                    </div>
+                </a>
+            </div>
+        </header>
+
+        <main class="container-produto">
+            <div class="type-imagens" id="container-miniaturas">
+                <button class="cards">
+                    <img src="/img/950ml/PT/WhatsApp Image 2026-04-09 at 15.01.09.jpeg" alt="Vista 1" class="ft">
+                </button>
+                <button class="cards">
+                    <img src="/img/950ml/PT/WhatsApp Image 2026-04-09 at 15.01.10 (1).jpeg" alt="Vista 2" class="ft">
+                </button>
+                <button class="cards">
+                    <img src="/img/950ml/PT/WhatsApp Image 2026-04-09 at 15.01.10.jpeg" alt="Vista 3" class="ft">
+                </button>
+            </div>
+
+            <div class="img-principal">
+                <img src="/img/950ml/PT/WhatsApp Image 2026-04-09 at 15.01.09.jpeg" alt="Garrafa Principal" class="imagem-big" id="foto-grande">
+                <ul class="infomation-garrafa">
+                    <li class="low"><i class="fa-solid fa-snowflake"></i> ATÉ 24H FRIO</li>
+                    <li class="low"><i class="fa-solid fa-fire-flame-curved"></i> ATÉ 12H QUENTE</li>
+                </ul>
+            </div>
+
+            <div class="descrition-itens">
+                <h2>Garrafa Térmica Hydra V2 950ml</h2>
+                <p class="valor">R$ 225,00 <strong>R$ 300,00</strong></p>
+                <p class="off">Reduzido em 25%</p>
+                <div class="parcelamento"><i class="fa-regular fa-credit-card"></i> ou em até 4x R$ 56,25 sem juros</div>
+                
+                <div class="border"></div>
+                
+                <div class="size-garrafas">
+                    <h3>Escolha os tamanhos:</h3>
+                    <ul>
+                        <a class="size" href="/html/1200ml.html"><li>1200ml</li></a>
+                        <a class="size active" href="/html/950ml.html"><li>950ml</li></a>
+                        <a class="size" href="/html/650ml.html"><li>650ml</li></a>
+                        <a class="size" href="/html/500ml.html"><li>500ml</li></a>
+                        <a class="size" href="/html/350ml.html"><li>350ml</li></a>
+                    </ul>
+                </div>
+
+                <div class="border"></div>
+
+                <div class="colors">
+                    <h3>Veja as cores disponiveis: <span id="nome-cor-selecionada">Preta</span></h3>
+                    <ul class="color">
+                        <button class="cor royal"><li></li></button>
+                        <button class="cor rose"><li></li></button>
+                        <button class="cor branca"><li></li></button>
+                        <button class="cor marinho"><li></li></button>
+                        <button class="cor preta"><li></li></button>
+                        <button class="cor turquesa"><li></li></button>
+                        <button class="cor pessego"><li></li></button>
+                        <button class="cor creme"><li></li></button>
+                    </ul>
+                </div>
+            </div>
+        </main>
+    </div>
+    
+
+    <script>
+        // 1. MAPEAMENTO DE IMAGENS E NOMES
+        const imagensPorCor = {
+            "royal": ["/img/950ml/Azul bic/1.jpeg", "/img/950ml/Azul bic/2.jpeg", "/img/950ml/Azul bic/3.jpeg", "/img/950ml/Azul bic/4.jpeg", "/img/950ml/950 todas.jpeg"],
+            "rose": ["/img/950ml/ROSE/1.jpeg", "/img/950ml/ROSE/2.jpeg", "/img/950ml/ROSE/3.jpeg", "/img/950ml/ROSE/4.jpeg", "/img/950ml/950 todas.jpeg"],
+            "preta": ["/img/950ml/PT/1.jpeg", "/img/950ml/PT/2.jpeg", "/img/950ml/PT/3.jpeg", "/img/950ml/PT/4.jpeg", "/img/950ml/950 todas.jpeg"],
+            "turquesa": ["/img/950ml/turquesa/1.jpeg", "/img/950ml/turquesa/2.jpeg", "/img/950ml/turquesa/3.jpeg", "/img/950ml/turquesa/4.jpeg", "/img/950ml/950 todas.jpeg"],
+            "branca": ["/img/950ml/BRANCA/1.jpeg", "/img/950ml/BRANCA/2.jpeg", "/img/950ml/BRANCA/3.jpeg", "/img/950ml/BRANCA/4.jpeg", "/img/950ml/950 todas.jpeg"],
+            "marinho": ["/img/950ml/MARINHO/1.jpeg", "/img/950ml/MARINHO/2.jpeg", "/img/950ml/MARINHO/3.jpeg", "/img/950ml/MARINHO/4.jpeg", "/img/950ml/950 todas.jpeg"],
+            "pessego": ["/img/950ml/PESSEGO/1.jpeg", "/img/950ml/PESSEGO/2.jpeg", "/img/950ml/PESSEGO/3.jpeg", "/img/950ml/PESSEGO/4.jpeg", "/img/950ml/950 todas.jpeg"],
+            "creme": ["/img/950ml/CREME/1.jpeg", "/img/950ml/CREME/2.jpeg", "/img/950ml/CREME/3.jpeg", "/img/950ml/CREME/4.jpeg", "/img/950ml/950 todas.jpeg"]
+        };
+
+        const nomesCores = {
+            "royal": "Azul Royal",
+            "rose": "Rose",
+            "branca": "Branca",
+            "marinho": "Azul Marinho",
+            "preta": "Preta",
+            "turquesa": "Turquesa",
+            "pessego": "Pêssego",
+            "creme": "Creme"
+        };
+
+        const containerMiniaturas = document.getElementById('container-miniaturas');
+        const imagemPrincipal = document.getElementById('foto-grande');
+        const botoesCores = document.querySelectorAll('.cor');
+        const textoNomeCor = document.getElementById('nome-cor-selecionada');
+
+        // FUNÇÃO PARA ATUALIZAR GALERIA E TEXTO
+        function atualizarProduto(corSelecionada) {
+            const novasImagens = imagensPorCor[corSelecionada];
+
+            if (novasImagens) {
+                containerMiniaturas.innerHTML = "";
+                novasImagens.forEach((src, index) => {
+                    const novoBotao = document.createElement('button');
+                    novoBotao.className = 'cards';
+                    novoBotao.innerHTML = `<img src="${src}" alt="Vista ${index + 1}" class="ft">`;
+                    novoBotao.addEventListener('click', () => { imagemPrincipal.src = src; });
+                    containerMiniaturas.appendChild(novoBotao);
+                });
+
+                imagemPrincipal.src = novasImagens[0];
+
+                if (nomesCores[corSelecionada]) {
+                    textoNomeCor.innerText = nomesCores[corSelecionada];
+                }
+            }
+        }
+
+        // EVENTO DE CLIQUE NAS CORES
+        botoesCores.forEach(botao => {
+            botao.addEventListener('click', function() {
+                const cor = this.classList[1]; 
+                atualizarProduto(cor);
+            });
+        });
+
+        // --- NOVA FUNÇÃO: LER A COR DA URL ---
+        function verificarCorDaURL() {
+            const urlParams = new URLSearchParams(window.location.search);
+            const corSolicitada = urlParams.get('cor'); // Ex: 'turquesa'
+
+            if (corSolicitada) {
+                // Encontra o botão que tem a classe da cor correspondente
+                const botaoAlvo = document.querySelector(`.cor.${corSolicitada}`);
+                if (botaoAlvo) {
+                    botaoAlvo.click(); // "Clica" automaticamente no botão da cor
+                }
+            }
+        }
+
+        // Configuração inicial para cliques nas miniaturas
+        document.querySelectorAll('.cards').forEach(card => {
+            card.addEventListener('click', function() {
+                imagemPrincipal.src = this.querySelector('img').src;
+            });
+        });
+
+        // Executa a verificação assim que a página carrega
+        window.onload = verificarCorDaURL;
+    </script>
+</body>
+</html>
